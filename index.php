@@ -4,6 +4,13 @@ class Article{
     public $text;
     public $author;
 
+    public function __construct($title, $text, $author)
+    {
+        $this->title = $title;
+        $this->text = $text;
+        $this->author = $author;
+    }
+
     public function view(){
         echo $this->title . "<br/>";
         echo $this->text . "<br/>";
@@ -17,3 +24,6 @@ $art->text = "This is some large text? you know...";
 $art->author = "Me";
 
 $art->view();
+
+$art2 = new Article("Title 2", "Very, very large texxxxxxt...", "Me against...");
+$art2->view();
