@@ -1,7 +1,7 @@
 <?php
 require __DIR__.'/db.php';
 
-$connect = new Db("localhost","news","SELECT * FROM articles");
-$news = $connect->getFromDb();
+$connect = new DB("localhost","news");
+$news = $connect->getAllFromDb("SELECT * FROM articles");
 
 include __DIR__.'/view.php';
