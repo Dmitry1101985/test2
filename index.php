@@ -23,7 +23,6 @@ $art = new Article(); // т.к есть конструктор, то при ин
 $art->title = "Title";// использовать его. Вот такая запись вызовет
 $art->text = "This is some large text? you know...";// предупреждение!!!
 $art->author = "Me";
-
 $art->view();
 */
 $art2 = new Article('Title 2', 'Very, very large texxxxxxt...', 'Me against...');
