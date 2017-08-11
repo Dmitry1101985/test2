@@ -1,7 +1,6 @@
 <?php
-require __DIR__.'/db.php';
+require_once __DIR__.'/model.php';
 
-$connect = new DB("localhost","news");
-$news = $connect->getAllFromDb("SELECT * FROM articles");
+$news = News::getAll();
 
 include __DIR__.'/view.php';

@@ -43,11 +43,11 @@ class DB {
         $this->db = new PDO('mysql:host='.$host.';dbname='.$dbname,'root','');
     }
 
-    public function getAllFromDb($sql){
+    public function getAllFromDb($sql, $class = "stdClass"){//по умолчанию стандартный класс
         $this->db->exec("SET NAMES UTF8");
         $query = $this->db->prepare($sql);
         $query->execute();
-        return $query->fetchAll(PDO::FETCH_ASSOC);
+        return $query->fetchAll(PDO::FETCH_CLASS, $class);//получаем объект заданного класса. Если не указан, то stdClass
     }
 
 }
