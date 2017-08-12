@@ -1,5 +1,7 @@
 <?php
 
+require_once __DIR__.'/autoload.php';
+
 $ctrl = isset($_GET['ctrl']) ? $_GET['ctrl'] : "News";
 //если переменная задана в Гет, то мы берем ее оотуда, если нет - то по умолчанию это News.
 //эта переменна будет нужна для формирования запроса контроллера и создания объекта класса
@@ -15,7 +17,7 @@ $controllerClassName = $ctrl . "Controller";
 // NewsController, PoemsController и т.д.
 // по умолчанию результат будет $controllerClassName = "NewsController"
 
-require_once __DIR__.'/controllers/' . $controllerClassName . ".php";
+//require_once __DIR__.'/controllers/' . $controllerClassName . ".php";
 //подключаем нужный нам контроллер и добавляем расширение php
 // по умолчанию результат будет require_once __DIR__.'/controllers/NewsController.php';
 
