@@ -1,16 +1,22 @@
 <?php
 //require_once __DIR__.'/../classes/DB.php';
 
-class News{
+class News extends AbstractModel {
     public $id;
     public $text;
     public $title;
     public $author;
+    protected static $table = "articles";
+    protected static $class = "News";
 
+    /*
     public static function getAll(){
         $db = new DB('localhost','news');
         return $db->getAllFromDb("SELECT * FROM articles", "News");
     }
+    */
+    //перенесли в абстрактный класс
+
 
     /*
      * Модель подключена к служебному классу DB, который напрямую работает с базой.
@@ -20,8 +26,11 @@ class News{
      * полученные объекты
      */
 
+    /*
     public static function getOne($id){
         $db = new DB('localhost','news');// id мы получим от пользователя через ГЕТ
         return $db->getOneFromDb("SELECT * FROM articles WHERE id=".$id, "News");
     }
+    */
+    //перенесли в абстрактный класс
 }
