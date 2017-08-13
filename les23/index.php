@@ -1,4 +1,25 @@
 <?php
+$id = [1,2,6,12,13,14,15,16];
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>News</title>
+</head>
+<body>
+    <div>
+        <a href="index.php?ctrl=News&act=All">All news</a><br>
+        <?php foreach ($id as $one):?>
+            <a href="index.php?ctrl=News&act=One&id=<?php echo $one;?>">News id<?php echo $one;?></a><br>
+        <?php endforeach;?>
+
+
+    </div>
+</body>
+</html>
+
+<?php
 
 require_once __DIR__.'/autoload.php';
 
@@ -44,3 +65,4 @@ require_once __DIR__.'/controllers/NewsController.php';
 $news = new NewsController();
 $news->actionAll(); //это результат работы предконтроллера
 */
+?>
