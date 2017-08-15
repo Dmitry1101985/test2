@@ -1,13 +1,13 @@
 <?php
 //require_once __DIR__.'/../classes/DB.php';
 
-class News extends AbstractModel {
+class NewsModel extends AbstractModel {
     public $id;
     public $text;
     public $title;
     public $author;
     protected static $table = "articles";
-    protected static $class = "News";
+    protected static $class = "NewsModel";
 
     /*
     public static function getAll(){

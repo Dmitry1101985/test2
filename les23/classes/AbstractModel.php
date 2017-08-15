@@ -26,7 +26,7 @@ abstract class AbstractModel
      * То же самое делаем с переменной $class. В каждом дочернем класса она будет иметь свое значение
      */
 
-    public static function getOne($id){
+    public static function getOneById($id){
         $params = [':id' => $id];
         $db = new DB('localhost','news');// id мы получим от пользователя через ГЕТ
         return $db->query("SELECT * FROM " . static::$table . " WHERE id=:id", static::$class,$params);
