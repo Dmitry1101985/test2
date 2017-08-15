@@ -7,9 +7,11 @@
 <body>
 <div>
 
-        <h1><?php echo $items->title;?></h1><br>
-        <p><?php echo $items->text;?></p><br>
-        <p><strong><?php echo $items->author;?></strong></p><br>
+    <?php foreach($items as $one):?>
+        <h1><?php echo $one->title;?></h1><br>
+        <p><?php echo $one->text;?></p><br>
+        <p><strong><?php echo $one->author;?></strong></p><br>
+    <?php endforeach;?>
 
 </div>
 </body>

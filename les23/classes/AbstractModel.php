@@ -12,7 +12,7 @@ abstract class AbstractModel
 
     public static function getAll(){
         $db = new DB('localhost','news');
-        return $db->getAllFromDb("SELECT * FROM " . static::$table, static::$class);
+        return $db->query("SELECT * FROM " . static::$table, static::$class);
     }
     /*
      * в данном случае мы используем переменную static::$table.
@@ -27,8 +27,9 @@ abstract class AbstractModel
      */
 
     public static function getOne($id){
+        $params = [':id' => $id];
         $db = new DB('localhost','news');// id мы получим от пользователя через ГЕТ
-        return $db->getOneFromDb("SELECT * FROM " . static::$table . " WHERE id=".$id, static::$class);
+        return $db->query("SELECT * FROM " . static::$table . " WHERE id=:id", static::$class,$params);
     }
 
 }

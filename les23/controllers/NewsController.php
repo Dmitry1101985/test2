@@ -20,6 +20,7 @@ class NewsController
     public function actionOne(){
         $id = $_GET['id'];
         $items = News::getOne($id);
+
         $view = new View();
         $view->items = $items;
         $view->display('news/one.php');
