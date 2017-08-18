@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>News</title>
-</head>
-<body>
-<div>
+
+<div style="background-color: #EBEBEB">
 
     <?php foreach($items as $one):?>
         <h1><?php echo $one->title;?></h1><br>
@@ -14,5 +8,3 @@
     <?php endforeach;?>
 
 </div>
-</body>
-</html>
