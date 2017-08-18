@@ -2,10 +2,18 @@
 //require_once __DIR__.'/../classes/DB.php';
 
 class NewsModel extends AbstractModel {
+    /*
     public $id;
     public $text;
     public $title;
     public $author;
+    */
+    /*
+     * не используем публичные свойства т.к. в абстрактной модели используем
+     * геттер и сеттер. Иначе он не будет работать, и во внутренний защищенный массив
+     * ничего не попадет.
+     */
+
     protected static $table = "articles";
     protected static $class = "NewsModel";
 

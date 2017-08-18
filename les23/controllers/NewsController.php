@@ -25,4 +25,41 @@ class NewsController
         $view->items = $items;
         $view->display('news/one.php');
     }
+
+    public function actionAdd(){
+        if(isset($_POST['submit'])){
+            $article = new NewsModel();
+            $article->title = $_POST['title'];
+            $article->text = $_POST['text'];
+            $article->author = $_POST['author'];
+            $article->insert();
+        }
+        $view = new View();
+        $view->display('news/add.php');
+    }
+
+    public function actionEditId(){
+        $items = NewsModel::getColumnId();
+        $view = new View();
+        $view->items = $items;
+        $view->display('news/all_id_edit.php');
+    }
+
+    public function actionEdit(){
+        $id = $_GET['id'];
+        $items = NewsModel::getOneById($id)[0];
+
+        if(isset($_POST['update'])){
+            $items->text = $_POST['text'];
+            $items->title = $_POST['title'];
+            $items->author = $_POST['author'];
+            //var_dump($items); die;
+            $items->update();
+        }
+
+        $view = new View();
+        $view->items = $items;
+        $view->display('news/one_edit.php');
+
+    }
 }

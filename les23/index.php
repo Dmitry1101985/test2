@@ -10,6 +10,8 @@ $id = [1,2,6,12,13,14,15,16];
 <body>
     <div>
         <a href="index.php?ctrl=News&act=All">All news</a><br>
+        <a href="index.php?ctrl=News&act=Add">Add news</a><br>
+        <a href="index.php?ctrl=News&act=EditId">Edit All id</a><br>
         <?php foreach ($id as $one):?>
             <a href="index.php?ctrl=News&act=One&id=<?php echo $one;?>">News id<?php echo $one;?></a><br>
         <?php endforeach;?>
