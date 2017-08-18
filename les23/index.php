@@ -1,6 +1,4 @@
-<?php
-$id = [1,2,6,12,13,14,15,16];
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,10 +9,29 @@ $id = [1,2,6,12,13,14,15,16];
     <div>
         <a href="index.php?ctrl=News&act=All">All news</a><br>
         <a href="index.php?ctrl=News&act=Add">Add news</a><br>
-        <a href="index.php?ctrl=News&act=EditId">Edit All id</a><br>
-        <?php foreach ($id as $one):?>
-            <a href="index.php?ctrl=News&act=One&id=<?php echo $one;?>">News id<?php echo $one;?></a><br>
-        <?php endforeach;?>
+        <a href="index.php?ctrl=News&act=EditTitles&col=title">Edit All Titles</a><br>
+        <label for="col">Все записи по:</label>
+        <form>
+        <select name="col" id="col">
+            <option value="title">заголовок</option>
+
+            <option value="author">автор</option>
+            <option value="id">id</option>
+
+        </select>
+            <button type="submit" name="go"><img src="img/follow.png" style="width: 100px; height: 30px" alt=""></button>
+        </form>
+        <?php
+            if(isset($_GET['go'])){
+                $_GET['ctrl'] = "News";
+                $_GET['act'] = "Column_All";
+            }
+        ?>
+
+     <!--   <a href="index.php?ctrl=News&act=Column_All&col=title">Titles</a><br>
+        <a href="index.php?ctrl=News&act=Column_All&col=author">Authors</a><br>
+        <a href="index.php?ctrl=News&act=Column_All&col=id">Id s</a><br>
+     -->
 
 
     </div>

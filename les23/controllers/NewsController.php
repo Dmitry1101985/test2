@@ -38,16 +38,17 @@ class NewsController
         $view->display('news/add.php');
     }
 
-    public function actionEditId(){
-        $items = NewsModel::getColumnId();
+    public function actionEditTitles(){
+        $column = $_GET['col'];
+        $items = NewsModel::getColumn($column);
         $view = new View();
         $view->items = $items;
-        $view->display('news/all_id_edit.php');
+        $view->display('news/all_titles_edit.php');
     }
 
     public function actionEdit(){
-        $id = $_GET['id'];
-        $items = NewsModel::getOneById($id)[0];
+        $value = $_GET['val'];
+        $items = NewsModel::getOneByColumn('title',$value)[0];
 
         if(isset($_POST['update'])){
             $items->text = $_POST['text'];
@@ -56,10 +57,31 @@ class NewsController
             //var_dump($items); die;
             $items->update();
         }
+        if(isset($_POST['delete'])){
+            $items->delete();
+        }
 
         $view = new View();
         $view->items = $items;
         $view->display('news/one_edit.php');
 
+    }
+
+    public function actionColumn_All(){
+        $column = $_GET['col'];
+        $items = NewsModel::getColumn($column);
+
+        $view = new View();
+        $view->items = $items;
+        $view->display('news/all_titles.php');
+    }
+    public function actionColumn_One(){
+        $column = $_GET['col'];
+        $value = $_GET['val'];
+        $items = NewsModel::getOneByColumn($column, $value);
+        //var_dump($items); die;
+        $view = new View();
+        $view->items = $items;
+        $view->display('news/one.php');
     }
 }

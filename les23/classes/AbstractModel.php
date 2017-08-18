@@ -74,4 +74,24 @@ abstract class AbstractModel
         $db->execute($sql);
     }
 
+    public function delete(){
+        $sql = "DELETE FROM ".static::$table." WHERE id=".$this->data['id'];
+        $db = new DB('localhost','news');
+        $db->execute($sql);
+    }
+
+    public static function getColumn($column){
+        $sql = "SELECT ".$column." FROM ".static::$table;
+        $db = new DB('localhost','news');
+        return $db->queryArr($sql);
+    }
+
+    public static function getOneByColumn($column, $value){
+
+        $sql = $sql = "SELECT * FROM ".static::$table." WHERE ".$column."= :value";
+        $params = [':value'=>$value];
+        $db = new DB('localhost','news');
+        return $db->query($sql, static::class,$params);
+    }
+
 }
