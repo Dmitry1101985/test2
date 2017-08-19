@@ -1,7 +1,7 @@
 
 
 <div style="background-color: #EBEBEB">
-    <a href="index.php?Ctrl=News&act=EditTitles&col=title">К списку <<<< </a><br>
+    <a href="admin.php?Ctrl=News&act=EditTitles&col=title">К списку <<<< </a><br>
     <div style="text-align: center">
         <h2>Статья id<?php echo $items->id;?></h2>
     </div>

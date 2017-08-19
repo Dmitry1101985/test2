@@ -13,12 +13,6 @@
                     <a href="index.php?ctrl=News&act=All">Все новости</a>
                 </td>
                 <td>
-                    <a href="index.php?ctrl=News&act=Add">Добавить новость</a>
-                </td>
-                <td>
-                    <a href="index.php?ctrl=News&act=EditTitles&col=title">Редактировать новость</a>
-                </td>
-                <td>
                     <label for="col">Посмотреть записи по:</label>
                         <form>
                         <select name="col" id="col">
@@ -36,6 +30,9 @@
                         $_GET['act'] = "Column_All";
                     }
                     ?>
+                </td>
+                <td>
+                    <a href="admin.php">На амин панель</a>
                 </td>
             </tr>
         </table>
