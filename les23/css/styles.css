@@ -1,0 +1,53 @@
+body{
+    width: 80%;
+    margin: auto
+}
+
+.nav_user{
+    background-color: #EBEBEB;
+}
+
+.nav_adm{
+    background-color: #87CEEB;
+}
+
+.nav_tab{
+    width: 100%;
+    height: 50px;
+    padding: 5px;
+    text-align: center;
+}
+
+#nav_tab_us{
+    background-color: #E0E0E0;
+}
+
+#nav_tab_adm{
+    background-color: #836FFF;
+}
+.view{
+    background-color: #EBEBEB;
+
+}
+
+#view{
+    padding: 10px;
+    margin-top: 0;
+}
+
+.view_content{
+    width: 60%;
+    margin: auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+}
+
+#one_edit_cont{
+    text-align: center;
+}
+
+.add_upd{
+    text-align: center;
+    padding: 5px;
+}

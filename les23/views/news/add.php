@@ -1,23 +1,25 @@
 
 
 
-<div style="background-color: #EBEBEB">
+<div class="view">
+    <div class="view_content">
+            <form method="post">
+                <div class="add_upd">
+                    <h2>Добавить статью</h2>
+                </div>
+                <div class="add_upd">
+                    <input style="width:500px" type="text" name="title" placeholder="Заголовок" required/>
+                </div>
+                <div class="add_upd">
+                    <textarea name="text" id="" cols="70" rows="30" placeholder="Текст статьи" required></textarea>
+                </div>
+                <div class="add_upd">
+                    <input type="text" name="author" placeholder="Автор" required/>
+                </div>
+                <div class="add_upd">
+                    <input type="submit" name="submit" />
+                </div>
+            </form>
+     </div>
 
-      <form method="post">
-          <div style="text-align: center; padding: 5px">
-              <h2>Добавить статью</h2>
-          </div>
-          <div style="text-align: center; padding: 5px">
-              <input style="width:500px" type="text" name="title" placeholder="Заголовок" required/>
-          </div>
-          <div style="text-align: center; padding: 5px">
-              <textarea name="text" id="" cols="70" rows="30" placeholder="Текст статьи" required></textarea>
-          </div>
-          <div style="text-align: center; padding: 5px">
-              <input type="text" name="author" placeholder="Автор" required/>
-          </div>
-          <div style="text-align: center; padding: 5px">
-              <input type="submit" name="submit" />
-          </div>
-      </form>
 </div>

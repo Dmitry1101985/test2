@@ -2,27 +2,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8"/>
+    <link type="text/css" rel="stylesheet" href="css/styles.css"/>
     <title>News</title>
 </head>
-<body style="width: 80%; margin: auto">
-    <div style="background-color: #EBEBEB">
-        <table style="width: 100%; text-align: center; background-color: #E0E0E0">
+<body>
+    <div class="nav_user">
+        <table class="nav_tab" id="nav_tab_us">
             <tr>
                 <td>
                     <a href="index.php?ctrl=News&act=All">Все новости</a>
                 </td>
                 <td>
                     <label for="col">Посмотреть записи по:</label>
-                        <form>
+                    <form>
                         <select name="col" id="col">
                             <option value="title">заголовок</option>
                             <option value="date">дата</option>
                             <option value="author">автор</option>
                             <option value="id">id</option>
-
                         </select>
-                        <button type="submit" name="go"><img src="img/follow.png" style="width: 100px; height: 30px" alt=""></button>
+                        <button type="submit" name="go">Сортировать</button>
                     </form>
                     <?php
                     if(isset($_GET['go'])){

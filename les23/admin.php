@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8"/>
+    <link type="text/css" rel="stylesheet" href="css/styles.css"/>
     <title>News</title>
 </head>
-<body style="width: 80%; margin: auto">
-<div style="background-color: #87CEEB">
-    <table style="width: 100%;height: 50px; text-align: center; background-color: #836FFF">
-        <tr>
+<body>
+    <div class="nav_adm">
+        <table class="nav_tab" id="nav_tab_adm">
+            <tr>
 
-            <td>
-                <a href="admin.php?ctrl=News&act=Add">Добавить новость</a>
-            </td>
-            <td>
-                <a href="admin.php?ctrl=News&act=EditTitles&col=title">Редактировать новость</a>
-            </td>
-            <td>
-                <a href="index.php">На сайт</a>
-            </td>
+                <td>
+                    <a href="admin.php?ctrl=News&act=Add">Добавить новость</a>
+                </td>
+                <td>
+                    <a href="admin.php?ctrl=News&act=EditTitles&col=title">Редактировать новость</a>
+                </td>
+                <td>
+                    <a href="index.php">На сайт</a>
+                </td>
 
-        </tr>
-    </table>
-
-</div>
+            </tr>
+        </table>
+    </div>
 <?php
 
 require_once __DIR__.'/autoload.php';
