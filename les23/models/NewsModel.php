@@ -16,6 +16,7 @@ class NewsModel extends AbstractModel {
 
     protected static $table = "articles";
     protected static $class = "NewsModel";
+    protected static $bd_table = "news";
 
     /*
     public static function getAll(){

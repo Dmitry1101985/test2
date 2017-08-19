@@ -23,7 +23,7 @@
                         <form>
                         <select name="col" id="col">
                             <option value="title">заголовок</option>
-
+                            <option value="date">дата</option>
                             <option value="author">автор</option>
                             <option value="id">id</option>
 

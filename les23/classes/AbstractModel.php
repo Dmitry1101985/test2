@@ -5,6 +5,7 @@ abstract class AbstractModel
 {
     protected static $table;
     protected static $class;
+    protected static $bd_table;
     protected $data = [];
     /*
      * привязываем переменную к классу вцелом. Данная переменная пренадлежит классу, а не
@@ -21,8 +22,8 @@ abstract class AbstractModel
     }
 
     public static function getAll(){
-        $db = new DB('localhost','news');
-        return $db->query("SELECT * FROM " . static::$table, static::$class);
+        $db = new DB('localhost', static::$bd_table);
+        return $db->query("SELECT * FROM " . static::$table . " ORDER BY id DESC", static::$class);
     }
     /*
      * в данном случае мы используем переменную static::$table.
@@ -36,11 +37,6 @@ abstract class AbstractModel
      * То же самое делаем с переменной $class. В каждом дочернем класса она будет иметь свое значение
      */
 
-    public static function getOneById($id){
-        $params = [':id' => $id];
-        $db = new DB('localhost','news');// id мы получим от пользователя через ГЕТ
-        return $db->query("SELECT * FROM " . static::$table . " WHERE id=:id", static::$class,$params);
-    }
 
     public function insert(){
         $values = [];
@@ -51,16 +47,12 @@ abstract class AbstractModel
         }
 
         $sql = "INSERT INTO ".static::$table." (".implode(", ", $cols).") VALUES (".implode(", ", array_keys($values)).")";
-        $db = new DB('localhost','news');
+        $db = new DB('localhost',static::$bd_table);
         $db->execute($sql,$values);
 
     }
 
-    public static function getColumnId(){
-        $sql = "SELECT id FROM ".static::$table;
-        $db = new DB('localhost','news');
-        return $db->queryArr($sql);
-    }
+
 
     public function update(){
         $data = [];
@@ -70,27 +62,27 @@ abstract class AbstractModel
         }
 
         $sql = "UPDATE ".static::$table." SET ".implode(', ',$data)." WHERE id=".$this->data['id'];
-        $db = new DB('localhost','news');
+        $db = new DB('localhost',static::$bd_table);
         $db->execute($sql);
     }
 
     public function delete(){
         $sql = "DELETE FROM ".static::$table." WHERE id=".$this->data['id'];
-        $db = new DB('localhost','news');
+        $db = new DB('localhost',static::$bd_table);
         $db->execute($sql);
     }
 
     public static function getColumn($column){
-        $sql = "SELECT ".$column." FROM ".static::$table;
-        $db = new DB('localhost','news');
+        $sql = "SELECT ".$column." FROM " . static::$table . " ORDER BY id DESC";
+        $db = new DB('localhost',static::$bd_table);
         return $db->queryArr($sql);
     }
 
     public static function getOneByColumn($column, $value){
 
-        $sql = $sql = "SELECT * FROM ".static::$table." WHERE ".$column."= :value";
+        $sql = $sql = "SELECT * FROM ".static::$table." WHERE ".$column."= :value ORDER BY id DESC";
         $params = [':value'=>$value];
-        $db = new DB('localhost','news');
+        $db = new DB('localhost',static::$bd_table);
         return $db->query($sql, static::class,$params);
     }
 
