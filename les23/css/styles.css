@@ -1,6 +1,6 @@
 body{
     width: 80%;
-    margin: auto
+    margin: auto;
 }
 
 .nav_user{
@@ -50,4 +50,16 @@ body{
 .add_upd{
     text-align: center;
     padding: 5px;
+}
+a{
+    text-decoration: none;
+    font-family: Verdana;
+}
+
+.nav_adm a{
+    color: #F5F5F5;
+}
+
+hr{
+    color: #EBEBEB;
 }

@@ -8,6 +8,7 @@ class AbstractController
     protected static $prop_1;
     protected static $prop_2;
     protected static $prop_3;
+    protected static $img_folder;
 
 
     public function actionAll(){
@@ -60,6 +61,12 @@ class AbstractController
             $item->$prop_1 = $_POST[$prop_1];
             $item->$prop_2 = $_POST[$prop_2];
             $item->$prop_3 = $_POST[$prop_3];
+            if($_FILES['pic']['error'] == 0){
+                $temp = $_FILES['pic']['tmp_name'];
+                $new_name = time() .".". explode('.', $_FILES['pic']['name'])[1];
+                move_uploaded_file($temp,"img/" . static::$img_folder . $new_name);
+                $item->img_url = "img/" . static::$img_folder . $new_name;
+            }
             $item->insert();
         }
         $view = new View();
@@ -78,10 +85,17 @@ class AbstractController
             $items->$prop_1 = $_POST[$prop_1];
             $items->$prop_2 = $_POST[$prop_2];
             $items->$prop_3 = $_POST[$prop_3];
+            if($_FILES['pic']['error'] == 0){
+                $temp = $_FILES['pic']['tmp_name'];
+                $new_name = time() .".". explode('.', $_FILES['pic']['name'])[1];
+                move_uploaded_file($temp,"img/" . static::$img_folder . $new_name);
+                $items->img_url = "img/" . static::$img_folder . $new_name;
+            }
             //var_dump($items); die;
             $items->update();
         }
         if(isset($_POST['delete'])){
+            unlink($items->img_url);
             $items->delete();
         }
 

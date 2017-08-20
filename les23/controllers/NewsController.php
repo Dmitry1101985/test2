@@ -7,6 +7,7 @@ class NewsController extends AbstractController
     protected static $prop_1 = "title";
     protected static $prop_2 = "text";
     protected static $prop_3 = "author";
+    protected static $img_folder = "img_news/";
 
 
     /*

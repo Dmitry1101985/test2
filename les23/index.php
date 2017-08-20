@@ -32,7 +32,10 @@
                     ?>
                 </td>
                 <td>
-                    <a href="admin.php">На амин панель</a>
+                    <a href="poems.php">Стихи</a>
+                </td>
+                <td>
+                    <a href="news_adm.php">На админ панель новости</a>
                 </td>
             </tr>
         </table>

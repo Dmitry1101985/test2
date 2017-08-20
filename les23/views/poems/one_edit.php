@@ -2,15 +2,15 @@
 
 <div class="view">
     <div class="view_content">
-        <a href="news_adm.php?Ctrl=News&act=EditTitles&col=title">К списку <<<< </a><br>
+        <a href="poems_adm.php?Ctrl=Poems&act=EditTitles&col=title">К списку <<<< </a><br>
         <div id="one_edit_cont">
-            <h2>Статья id<?php echo $items->id;?></h2>
+            <h2>Стих id<?php echo $items->id;?></h2>
         </div>
 
         <form enctype="multipart/form-data" method="post">
 
             <div class="add_upd">
-                <h2>Редактировать статью</h2>
+                <h2>Редактировать стих</h2>
             </div>
             <div class="add_upd">
                 <img style="max-width: 400px" src="<?php echo $items->img_url;?>"/>

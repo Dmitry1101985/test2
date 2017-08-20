@@ -83,7 +83,7 @@ abstract class AbstractModel
         $sql = $sql = "SELECT * FROM ".static::$table." WHERE ".$column."= :value ORDER BY id DESC";
         $params = [':value'=>$value];
         $db = new DB('localhost',static::$bd_table);
-        return $db->query($sql, static::class,$params);
+        return $db->query($sql, static::$class, $params);
     }
 
 }
