@@ -31,13 +31,13 @@
                 }
                 ?>
             </td>
-            <td>
-                <a href="poems_adm.php">На админ панель стихи</a>
-            </td>
+
             <td>
                 <a href="index.php">Новости</a>
             </td>
-
+            <td>
+                <a href="poems_adm.php">На админ панель стихи</a>
+            </td>
         </tr>
     </table>
 

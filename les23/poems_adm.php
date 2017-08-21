@@ -17,13 +17,13 @@
             <td>
                 <a href="poems_adm.php?ctrl=Poems&act=EditTitles&col=title">Редактировать стих</a>
             </td>
-            <td>
-                <a href="index.php">На сайт</a>
-            </td>
+
             <td>
                 <a href="news_adm.php">Новости</a>
             </td>
-
+            <td>
+                <a href="index.php">На сайт</a>
+            </td>
         </tr>
     </table>
 </div>
